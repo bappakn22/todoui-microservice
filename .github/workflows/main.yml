@@ -1,9 +1,9 @@
 name: My First Workflow
 
 on: 
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 jobs:
@@ -17,6 +17,6 @@ jobs:
       - name: Show Date
         run: date
 
-      - name: Show CUrrent Directory
+      - name: Show Current Directory
         run: pwd
 
