@@ -30,7 +30,8 @@ jobs:
           az acr show --name acrtodoappbappa --query loginServer --output tsv
           az role assignment list --assignee 99540b96-fa8e-43ae-a229-7eb2aea8f9fa --all --include-inherited --output table
 
-
-
+      - name: Login to ACR
+        run: |
+          az acr login --name acrtodoappbappa
 
     
