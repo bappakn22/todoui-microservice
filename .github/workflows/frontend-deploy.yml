@@ -6,7 +6,13 @@ on:
 permissions: 
   id-token: write
   contents: read
-
+  
+env:
+  IMAGE_NAME: todo_frontend
+  IMAGE_TAG: v1
+  ACR_NAME: acrtodoappbappa
+  ACR_LOGIN_SERVER: acrtodoappbappa.azurecr.io
+  
 jobs:
   azure-login-test:
     runs-on: ubuntu-latest
@@ -26,12 +32,36 @@ jobs:
         run: |
           az account show
           az account show --output table
-          az acr show --name acrtodoappbappa --output table
-          az acr show --name acrtodoappbappa --query loginServer --output tsv
+          az acr show --name ${{ENV.ACR_NAME}} --output table
+          az acr show --name ${{ENV.ACR_NAME}} --query loginServer --output tsv
           az role assignment list --assignee 99540b96-fa8e-43ae-a229-7eb2aea8f9fa --all --include-inherited --output table
 
       - name: Login to ACR
         run: |
-          az acr login --name acrtodoappbappa
+          az acr login --name ${{ENV.ACR_NAME}}
+
+      - name: Build Docker Image
+        run: |
+          docker build -t ${{env.ACR_LOGIN_SERVER}}/${{env.IMAGE_NAME}}:${{env.IMAGE_TAG}} .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
     
