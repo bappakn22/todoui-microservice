@@ -56,6 +56,15 @@ jobs:
         run: |
           kubectl get nodes
 
+      - name: Deploy frontend to AKS
+        run: |
+          kubectl apply -f manifest/1.namespaces.yml
+          kubectl apply -f manifest/2.deployment.yaml
+          kubectl apply -f manifest/3.service.yml
+          kubectl apply -f manifest/4.firfox.yaml
+          kubectl apply -f manifest/5.stgclass.yaml
+          kubectl apply -f manifest/6.pvc.yaml
+
 
 
 
