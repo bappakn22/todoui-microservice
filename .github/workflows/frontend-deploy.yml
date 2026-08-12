@@ -52,7 +52,9 @@ jobs:
         run: |
           az aks get-credentials --resource-group jaydeep_rg1 --name jaydeep-aks-cluster --overwrite-existing
     
-
+      - name: Check AKS
+        run: |
+          kubectl get nodes
 
 
 
