@@ -1,11 +1,18 @@
 apiVersion: storage.k8s.io/v1
+
 kind: StorageClass
+
 metadata: 
-  name: stgclass-tudo
-  namespace: dev-todo
+  namespace: todo-app
+  name: stgclass-todo
+
 provisioner: disk.csi.azure.com
+
 parameters: 
   skuname: Premium_LRS
+
 reclaimPolicy: Delete
+
 volumeBindingMode: WaitForFirstConsumer
+
 allowVolumeExpansion: true

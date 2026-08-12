@@ -1,9 +1,11 @@
 apiVersion: v1
-kind: PersistentVolumeClaim
-metadata: 
-  name: stgclass-todopvc
-  namespace: dev-todo
 
+kind: PersistentVolumeClaim
+
+metadata: 
+  namespace: todo-app
+  name: stgclass-todopvc
+  
 spec: 
   accessModes:
     - ReadWriteOnce
@@ -11,5 +13,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: stgclass-tudo
+  storageClassName: stgclass-todo
   volumeMode: Filesystem
