@@ -3,11 +3,11 @@ apiVersion: v1
 kind: Pod
 
 metadata:
-  namespace: dev-todo
+  namespace: todo-app
   name: firefox-todo
   labels:
     app: frontend
-    
+
 spec:
   containers:
   - name: myapp
