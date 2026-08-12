@@ -27,8 +27,7 @@ spec:
     spec:
       containers:
         - name: todo-frontend
-
-          image: nginx:latest
+          image: acrtodoappbappa.azurecr.io/todo_frontend:v1
 
           resources:
             requests:
