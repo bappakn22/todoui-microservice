@@ -17,6 +17,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: todoui-svc
+                name: todo-frontend-service
                 port:
                   number: 80
