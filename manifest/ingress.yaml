@@ -2,8 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 
 metadata:
-  name: todo-ingress
-  namespace: dev-todo
+  name: todo-frontend-ingress
+  namespace: todo-app
   annotations:
     appgw.ingress.kubernetes.io/backend-path-prefix: "/"
 
@@ -11,12 +11,13 @@ spec:
   ingressClassName: azure-application-gateway
 
   rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: todo-frontend-service
-                port:
-                  number: 80
+     - host: anihub.shop
+       http:
+         paths:
+           - path: /
+             pathType: Prefix
+             backend:
+               service:
+                 name: todo-frontend-service
+                 port:
+                   number: 80
