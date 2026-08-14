@@ -11,7 +11,7 @@ spec:
   ingressClassName: azure-application-gateway
 
   rules:
-     - host: anihub.shop
+     - host: todo-ui.anihub.shop
        http:
          paths:
            - path: /

@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: todo-frontend
-          image: acrtodoappbappa.azurecr.io/todo_frontend:v2
+          image: acrtodoappbappa.azurecr.io/todo_frontend:v1
 
           resources:
             requests:
