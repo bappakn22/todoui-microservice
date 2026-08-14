@@ -9,7 +9,7 @@ permissions:
   
 env:
   IMAGE_NAME: todo_frontend
-  IMAGE_TAG: v1
+  IMAGE_TAG: v2
   ACR_NAME: acrtodoappbappa
   ACR_LOGIN_SERVER: acrtodoappbappa.azurecr.io
   
